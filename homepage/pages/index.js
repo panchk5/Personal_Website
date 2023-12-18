@@ -11,6 +11,7 @@ const Page = () => {
                     <Box display={{ md: "flex" }}>
                         <Box flexGrow={1}>
                             <Heading as="h2" variant="page-title">I'm a Software Engineer</Heading>
+                            <p>My interests include Web Development, DevOps, and Machine Learning.</p>
                         </Box>
                     </Box>
                 </Container>
