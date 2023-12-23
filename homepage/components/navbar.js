@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 
 import * as ChakraUI from '@chakra-ui/react'
 
-import { HumburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, UpDownIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 
 const LinkItem = ({ href, path, children }) => {
@@ -35,13 +35,39 @@ const Navbar = props => {
                         </ChakraUI.Heading>
                     </ChakraUI.Flex>
                     <ChakraUI.Stack direction={{ base: 'column', md: 'row' }} display={{ base: 'none', md: 'flex' }} width={{ base: 'full', md: 'auto' }} alignItems="center" flexGrow={1} mt={{ base: 4, md: 0 }}>
-                        {/* <LinkItem href="/works" path={path}>
+                        <Link href="/works" path={path} >
                             Works
-                        </LinkItem>
-                        <LinkItem href="/blog" path={path}>
-                            Blog
-                        </LinkItem> */}
+                        </Link>
+                        <Link href={"/posts"} path={path} >
+                            Posts
+                        </Link>
                     </ChakraUI.Stack>
+                    <ChakraUI.Box flex={1} align="right">
+                        <ChakraUI.Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+                            <ChakraUI.Menu>
+                                <ChakraUI.MenuButton 
+                                as={ChakraUI.IconButton} 
+                                icon={<HamburgerIcon />} 
+                                variant={'outline'}
+                                aria-label={'Options'}
+                                />
+                                <ChakraUI.MenuList>
+                                    <NextLink href="/" passHref legacyBehavior>
+                                        <ChakraUI.MenuItem as={Link}>About</ChakraUI.MenuItem>
+                                    </NextLink>
+                                    <NextLink href="/works" passHref legacyBehavior>
+                                        <ChakraUI.MenuItem as={Link}>Works</ChakraUI.MenuItem>
+                                    </NextLink>
+                                    <NextLink href="/posts" passHref legacyBehavior>
+                                        <ChakraUI.MenuItem as={Link}>Posts</ChakraUI.MenuItem>
+                                    </NextLink>
+                                    <ChakraUI.MenuItem as={Link} href="https://www.github.com/panchk5" isExternal>Github</ChakraUI.MenuItem>
+                                </ChakraUI.MenuList>
+
+                            </ChakraUI.Menu>
+                        </ChakraUI.Box>
+                    </ChakraUI.Box>
+
                 </ChakraUI.Container>
             </ChakraUI.Box>
 
