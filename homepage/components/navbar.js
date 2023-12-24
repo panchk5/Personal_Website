@@ -1,10 +1,16 @@
 import Logo from './logo'
 import NextLink from 'next/link'
-
 import * as ChakraUI from '@chakra-ui/react'
 
-import { HamburgerIcon, UpDownIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
+
+import {IconButton, useColorMode, useColorModeValue} from '@chakra-ui/react'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+
+
+    
+
 
 const LinkItem = ({ href, path, children }) => {
     const active = path === href
@@ -25,7 +31,7 @@ const LinkItem = ({ href, path, children }) => {
 
 const Navbar = props => {
     const { path } = props
-    
+    const { colorMode, toggleColorMode } = useColorMode()
     return (
         <ChakraUI.Box position="fixed" style={{backdropFilter: 'blur(10px'}} as="nav" w="100%" bg={ChakraUI.useColorModeValue('white', 'gray800')} zIndex="sticky" shadow="md"{...props}>
                 <ChakraUI.Container display='flex' p={2} maxW="container.md" wrap="wrap" allign="center" justify="space-between">
@@ -34,15 +40,24 @@ const Navbar = props => {
                             <Logo />
                         </ChakraUI.Heading>
                     </ChakraUI.Flex>
+                    
                     <ChakraUI.Stack direction={{ base: 'column', md: 'row' }} display={{ base: 'none', md: 'flex' }} width={{ base: 'full', md: 'auto' }} alignItems="center" flexGrow={1} mt={{ base: 4, md: 0 }}>
                         <Link href="/works" path={path} >
                             Works
                         </Link>
-                        <Link href={"/posts"} path={path} >
+                        <Link href="/posts" path={path} >
                             Posts
                         </Link>
                     </ChakraUI.Stack>
                     <ChakraUI.Box flex={1} align="right">
+                        
+                        <IconButton
+                        aria-label="Toggle theme"
+                        colorScheme={useColorModeValue('purple', 'orange')}
+                        icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+                        onClick={toggleColorMode}
+                        ></IconButton>
+
                         <ChakraUI.Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <ChakraUI.Menu>
                                 <ChakraUI.MenuButton 
