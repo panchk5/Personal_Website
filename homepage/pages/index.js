@@ -31,26 +31,7 @@ const Page = () => {
                     </Paragraph>
                 </Section>
                 <Section delay={0.6}>
-                    <Heading as="h3" size="lg" allign="center" variant="section-title">My Timeline</Heading>
-                    <Timeline >
-                        <b><year>2004 </year></b>
-                        Born in Ahemdabad, India
-                    </Timeline>
-                    <Timeline>
-                        <b><year>2022 </year></b>
-                        Began my degree at McMaster University.
-                    </Timeline>
-                    <Timeline>
-                        <b><year>2021 </year></b>
-                        Born in Ahemdabad, India
-                    </Timeline>
-                    <Timeline>
-                        <b><year>2021 </year></b>
-                        Born in Ahemdabad, India
-                    </Timeline>
-                </Section>
-                <Section delay={0.8}>
-                    <Heading as="h3" size="lg" allign="center" variant="section-title">My Work</Heading>
+                    <Heading as="h3" size="lg" allign="center" variant="section-title">My Experience</Heading>
                     <Work/>
                 </Section>
             </Container>
