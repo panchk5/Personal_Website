@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useColorModeValue, Box, Wrap, WrapItem, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Section from "./section";
 
 export const Work = () => {
     const [workExperience, setWorkExperience] = useState([
@@ -35,7 +36,7 @@ export const Work = () => {
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                        >
+                        >   <Section delay={0.4}>
                             <Box
                                 p="4"
                                 bg={useColorModeValue("#f6f1ec", "#313134")}
@@ -54,6 +55,7 @@ export const Work = () => {
                                 </Box>
                                 
                             </Box>
+                            </Section>
                         </motion.div>
                     </WrapItem>
                 ))}

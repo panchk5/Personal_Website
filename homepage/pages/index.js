@@ -34,6 +34,10 @@ const Page = () => {
                     <Heading as="h3" size="lg" allign="center" variant="section-title">My Experience</Heading>
                     <Work/>
                 </Section>
+                <Section delay={1}>
+                    <Heading as="h3" variant="section-title">I ♡</Heading>
+                    <Paragraph>Climbing, Machine learning,  Music, Backend, Guitar, Valorant</Paragraph>
+                </Section>
             </Container>
         
     )
